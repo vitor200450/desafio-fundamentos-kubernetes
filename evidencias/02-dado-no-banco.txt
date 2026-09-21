@@ -1,0 +1,5 @@
+ id |        task         | done 
+----+---------------------+------
+  1 | sobreviva ao delete | f
+(1 row)
+

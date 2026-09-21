@@ -1,0 +1,25 @@
+=== kubectl get all -n desafio ===
+NAME                            READY   STATUS      RESTARTS   AGE
+pod/curlpod                     0/1     Completed   0          17m
+pod/postgres-76cb798576-v4qbk   1/1     Running     0          2m25s
+pod/postgrest-fcd7cc64-647bg    1/1     Running     0          16m
+pod/postgrest-fcd7cc64-qpbmg    1/1     Running     0          16m
+
+NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/postgres    ClusterIP   10.43.36.149    <none>        5432/TCP   50m
+service/postgrest   ClusterIP   10.43.212.239   <none>        3000/TCP   42m
+
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/postgres    1/1     1            1           50m
+deployment.apps/postgrest   2/2     2            2           42m
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/postgres-76cb798576    1         1         1       50m
+replicaset.apps/postgrest-57f9f87b6d   0         0         0       32m
+replicaset.apps/postgrest-855d899ccc   0         0         0       34m
+replicaset.apps/postgrest-bc4bcf7b5    0         0         0       42m
+replicaset.apps/postgrest-fcd7cc64     2         2         2       16m
+
+=== kubectl get pvc -n desafio ===
+NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+postgres-pvc   Bound    pvc-25ea64d8-85c1-47a9-8ca4-4c0fe0dbd31f   1Gi        RWO            local-path     <unset>                 50m
